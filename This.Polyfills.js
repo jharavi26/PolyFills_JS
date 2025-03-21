@@ -56,8 +56,29 @@ Function.prototype.myBind = function(context, ...args) {
   };
 };
 
-
 const newFunc = fullname.myBind(person, 21, "Banglore");
 
 newFunc(); 
 
+
+//Debounce 
+
+function debounce(func , delay){
+  let timer ;
+  return function(...args){
+  const context = this;
+  clearTimeout(timer);
+
+  timer = setTimeout(() =>func.apply(context, args) , delay);
+}
+}
+
+function art (){
+  console.log("Art")
+}
+
+const debounceLog = debounce(art, 1000)
+
+debounceLog();
+debounceLog();
+debounceLog();
