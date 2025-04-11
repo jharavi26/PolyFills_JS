@@ -11,9 +11,9 @@ fullname.call(person , 27 , "Mumbai");
 
 // Call PolyFills 
  
-Function.prototype.myCall = function(context , ...args){
+Function.prototype.myCall = function(context = {} , ...args){
   if(typeof this !== "function"){
-    throw new console.error(this + "It is not Callable");
+    throw new Error(this + "It is not Callable");
   }
 
   context.fn = this;
@@ -26,7 +26,7 @@ fullname.myCall(person, 26 , "Delhi")
 
 //Apply Polyfills
 
-Function.prototype.myApply = function(context , args = []){
+Function.prototype.myApply = function(context = {}, args = []){
   if(typeof this !== "function"){
     throw new console.error(this + "It is not Callable");
   }
@@ -45,20 +45,29 @@ fullname.myApply(person, [22, "Surat"])
 //Bind polyfills 
 
 // Bind polyfill
-Function.prototype.myBind = function(context, ...args) {
-  if (typeof this !== "function") {
-    throw new TypeError(this + " can not be bound");
+const person = {
+  name : "Ravikumar",
+  LastName : "Jha",
+}
+
+function greet(city){
+  console.log(`${this.name} & lastName is ${this.LastName} & live in ${city}`)
+}
+
+
+Function.prototype.myBind = function(context = {}, ...args){
+  if(typeof this !== "function"){
+    throw new Error("This is not Bounded")
   }
 
-  const fn = this;
-  return function(...newArgs) {
-    return fn.apply(context, [...args, ...newArgs]);
-  };
+  context.fn = this;
+   return function(...newArgs){
+    context.fn(...args, ...newArgs)
+   };
 };
 
-const newFunc = fullname.myBind(person, 21, "Banglore");
-
-newFunc(); 
+const newFunc = greet.myBind(person, "Mumbai");
+newFunc();
 
 
 //Debounce 
