@@ -46,4 +46,9 @@ console.log(arr5.includes(33));                //Checks if an array contains a v
 console.log(arr5.indexOf(55));                 //Returns the first index of a value.
 
 
+const arr6 = [1,2,3,4,[5,6,7],[8,9,[10,11]]];
+console.log(arr6.flat(2));
 
+
+const arr7 = [1,2,3,4,5];
+console.log(arr7.join("-"));
