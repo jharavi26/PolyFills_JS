@@ -45,7 +45,7 @@ fullname.myApply(person, [22, "Surat"])
 //Bind polyfills 
 
 // Bind polyfill
-const person = {
+const person2 = {
   name : "Ravikumar",
   LastName : "Jha",
 }
@@ -66,7 +66,7 @@ Function.prototype.myBind = function(context = {}, ...args){
    };
 };
 
-const newFunc = greet.myBind(person, "Mumbai");
+const newFunc = greet.myBind(person2, "Mumbai");
 newFunc();
 
 
