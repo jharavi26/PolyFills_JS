@@ -21,7 +21,6 @@ document.getElementById("input2").addEventListener("input", ()=>{
 })
 
 
-
 document.getElementById("grand").addEventListener("click" , ()=>{
   console.log("GrandParent Clicked")
 },);
