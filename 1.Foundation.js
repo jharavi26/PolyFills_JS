@@ -32,4 +32,50 @@ console.log(NaN == NaN);                                       // false (NaN is 
 
 
 
-// Function : Block of code 
+// Function : A block of reusable code designed to perform a specific task.
+
+// 1. Function Declaration : Way to define Function.
+// 2. Calling Function : execute the call inside that function .
+// 3.Function Expression : define a function as value & assign it to a variable. 
+// 4.Annoymous Function : Without Name & used as argument or callback.
+// 5. Immediately Invoked Function : execute as soon as they are defined.
+
+
+// Parameters vs Arguments
+//Parameters: Variables listed in function definition
+//Arguments: Values passed when calling the function
+
+function Sum(a, b){                                    // a & b function Parameters
+  return a+b;
+}
+console.log(Sum(2,3));                                 // 2 & 3 function Arguments
+
+//Function Expression 
+const add = function (a, b){
+  return a+b;
+}
+console.log(add(31,3));
+
+//IEFF Function 
+(function() {
+  console.log("IIFE executed!");
+})();
+
+
+// Arrow function 
+
+const mul = (r,s)=>{
+  return r * s;
+}
+console.log(mul(31, 26));
+
+const divide = (c,d)=>c/d;                      // If function body is a single return statement, you can omit {} and return.
+
+console.log(divide(6,2));
+
+
+const Greet = ()=>"Hello Ravi";
+console.log(Greet());
+
+const cube = (n)=>n*n*n;               // Way to write in a single statement .
+console.log(cube(5));
