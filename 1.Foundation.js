@@ -30,6 +30,27 @@ console.log({} == "[object Object]");                         // true (toString 
 console.log(NaN == NaN);                                       // false (NaN is never equal to itself)
 
 
+console.log(5 + +"3");            // 5=3 = 8
+console.log(5 + -"2");            // 5-2 = 3
+
+console.log({} == false);            // false
+console.log([] == false);            // True
+
+console.log(null === undefined)      //False
+
+console.log(undefined == NaN);         //False
+
+console.log(false == NaN)             //False
+
+
+//Pre-Increment :- Increments the value first, then returns the updated value.
+//Post-Increment :- Returns the current value first, then increments it.
+
+let x = 1;
+console.log(x++ + x++ + x++ - x++ + x); //7 (1,2,3-4+5)
+
+
+console.log("5" - -"2" + "3")   // 73
 
 
 // Function : A block of reusable code designed to perform a specific task.
@@ -44,6 +65,8 @@ console.log(NaN == NaN);                                       // false (NaN is 
 // Parameters vs Arguments
 //Parameters: Variables listed in function definition
 //Arguments: Values passed when calling the function
+
+// We can pass functions inside a function as arguments and /or return a function(HOF). These ability are altogether known as First class function. It is programming concept available in some other languages too.
 
 function Sum(a, b){                                    // a & b function Parameters
   return a+b;
@@ -79,3 +102,42 @@ console.log(Greet());
 
 const cube = (n)=>n*n*n;               // Way to write in a single statement .
 console.log(cube(5));
+
+//Callback Function :- A callback function is simply a function that is passed as an argument to another function and executed after some operation has been completed.
+
+setTimeout(function (){
+  console.log("Hi")
+},5000)
+
+setTimeout(()=>{
+  console.log("Hello")
+},3000)
+
+
+function Gree(name , cb){
+  cb();                                         // Callback Function
+  console.log("Hii " + name);
+}
+
+function wish(){
+  console.log("Callback Function Execution")
+}
+
+Gree("Art", wish);
+
+// Higher-Order Function : 
+// Takes another function as an argument (callback).
+// Returns a function as its result.
+
+//Return as Function
+function Multiplier(factor){
+  return function (s){
+    return factor * s;
+  }
+}
+
+const double = Multiplier(2);
+const triple = Multiplier(3);
+
+console.log(double(6));
+console.log(triple(6));
