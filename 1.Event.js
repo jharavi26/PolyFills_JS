@@ -6,12 +6,12 @@ document.getElementById("grand").addEventListener("click" , ()=>{
 
 document.getElementById("parent").addEventListener("click" , ()=>{
   console.log("Parent Clicked")
-},);
+}, true);
 
 document.getElementById("child").addEventListener("click" , (e)=>{
   console.log("Child Clicked");
   e.stopPropagation();
-}, );
+},);
 
 // Bubbling Phase – Event bubbles back up from the target element to the root.
 //By default, events bubble upwards.
