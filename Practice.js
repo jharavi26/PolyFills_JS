@@ -1,3 +1,3 @@
-const arr = [3,4];
-const arr2 = [...arr, [3,4]];
-console.log(arr2.length, arr2[2][0])
+let x = "123";
+console.log(+x === Number(x));
+console.log(Object.getPrototypeOf(async function(){}).constructor.name);
