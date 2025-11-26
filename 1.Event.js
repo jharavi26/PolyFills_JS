@@ -1,24 +1,4 @@
-  let timer = 0;
-  document.getElementById("input").addEventListener("keydown" , ()=>{
-    clearTimeout(timer);
-  timer = setTimeout(function(){
-    let inputValue = document.getElementById("input").value;
-    document.querySelector(".output").innerText = inputValue
-  } , 1000)
-  })
-
-
-let lastExecutionTime = 0;
-const delay = 1000;
-document.getElementById("input2").addEventListener("input", ()=>{
-  const currentTime = Date.now();
-  if(currentTime - lastExecutionTime >  delay)
-  {
-    inputValue2 = document.getElementById("input2").value;
-    document.querySelector(".output2").innerText = inputValue2;
-    lastExecutionTime = currentTime;
-  }
-})
+//Capturing Phase (Event Capture) – Event travels from the root (window/document) down to the target element.
 
 document.getElementById("grand").addEventListener("click" , ()=>{
   console.log("GrandParent Clicked")
@@ -26,12 +6,16 @@ document.getElementById("grand").addEventListener("click" , ()=>{
 
 document.getElementById("parent").addEventListener("click" , ()=>{
   console.log("Parent Clicked")
-},);
+}, true);
 
 document.getElementById("child").addEventListener("click" , (e)=>{
   console.log("Child Clicked");
   e.stopPropagation();
 },);
+
+// Bubbling Phase – Event bubbles back up from the target element to the root.
+//By default, events bubble upwards.
+
 
 // Event Delegation :- Event delegation is a technique where a single event listener is added to a parent element instead of multiple listeners on individual child elements.
 
