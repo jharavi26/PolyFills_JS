@@ -1,0 +1,19 @@
+*{
+  background-color: aqua;
+}
+
+
+.art{
+  height: 300px;
+  width: 300px;
+  margin: 5px;
+  background-color: red;
+  transition: background-color 2s ease margin 0.5s ease-in-out;
+}
+
+
+.art:hover{
+  margin: 15px;
+  background-color: green;
+}
+
