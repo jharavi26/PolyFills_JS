@@ -43,3 +43,56 @@ console.log(lastChildElement);
 let children = parentNode.children;
 console.log(children);
 
+const h2 = document.createElement("h2");
+h2.textContent = "UseCase of Before Method";                     
+parentNode.before(h2);                                       // allows you to insert one or more nodes before the element
+
+const h3 = document.createElement("h3");
+h3.textContent = "UseCase of After Method";                     
+parentNode.after(h3);                                        // after() method to insert a node after an element.
+ 
+let btn1 = document.getElementById("ravi");                            
+let result = btn1.getAttribute("id");                                      // getAttribute
+console.log(result);
+
+btn1.style.backgroundColor = "red";                     //Inline Style
+btn1.style.color = "white";
+btn1.style.borderRadius = "10px";
+btn1.style.fontSize = "16px";
+btn1.style.padding = "5px"
+btn1.style.margin = "10px"
+
+btn1.setAttribute("name", "Submit");                                       // setAttribute
+let result2 = btn1.getAttribute("name")
+console.log("result2")
+
+console.log(btn1.hasAttribute("name"))
+
+btn1.removeAttribute("id");
+console.log(btn1.hasAttribute("id"));
+
+
+
+//Add & Append the element or nodelist
+
+let content = document.createElement("div");
+content.innerHTML = "Create & Append a Element";
+content.id = "art3";
+content.className = "note";
+document.body.append(content);
+console.log(content.getAttribute("id"))
+
+
+let para = document.getElementById("note");
+console.log(para.textContent);
+
+console.log(para.innerHTML);             //get or set the HTML markup contained within the element:
+
+console.log(para.innerText);                //returns only human-readable text.
+
+para.classList.add("highlight");
+
+
+
+
+ 

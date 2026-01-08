@@ -21,7 +21,7 @@
 }
 
 .traverse{
-  height: 200px;
+  height: 300px;
   width: 200px;
   border-radius: 5px;
   background-color: green;
@@ -30,4 +30,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.highlight {                                           /*  Add CSS classlist  */
+  background-color: orange;
+  color: white;
+  padding: 10px;
 }
